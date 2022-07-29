@@ -1,0 +1,40 @@
+@API_URL = http://localhost:5000
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQ1NTIxMzcxN2NiZTZiYTIwNDEwOTkiLCJlbWFpbCI6ImVsQGVsLm5ldCIsImlhdCI6MTY1ODE1MDkzNCwiZXhwIjoxNjU4MTY1MzM0fQ.HDGb5MPvLmwkisBrG4euJ2cr7b-MuCG2nWmgrGCzYOo
+
+GET {{API_URL}}/
+
+### Users all
+GET {{API_URL}}/user
+Authorization: {{TOKEN}}
+
+### User single
+GET {{API_URL}}/user/
+Authorization: {{TOKEN}}
+
+### Signup
+POST {{API_URL}}/user
+Content-Type: application/json
+
+{
+  "username": "kati",
+  "email": "kati@gmail.com",
+  "password": "kati" 
+}
+
+### Login
+POST {{API_URL}}/user/login
+Content-Type: application/json
+
+{
+  "email": "jenny@gmail.com",
+  "password": "jenny" 
+}
+
+### if create todo
+POST {{API_URL}}/todo
+Content-Type: application/json
+Authorization: {{TOKEN}}
+
+{
+  "titles": "Code some frontend for JWT"
+}
