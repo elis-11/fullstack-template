@@ -17,7 +17,8 @@ export const Dashboard = () => {
       setErrors("");
       setUsers(result);
     };
-    // console.log(user);
+    console.log(user);
+  
     loadData();
   }, [user]);
 
