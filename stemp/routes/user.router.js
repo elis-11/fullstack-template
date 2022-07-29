@@ -11,7 +11,6 @@ const userRouter = Router()
 // Route: /user
 userRouter.get("/", auth, async (req, res, next) => {
   console.log("[ROUTE] Users here...")
-
   // we can access logged in users now anywhere
   console.log("Authenticated user:", req.user._id)
   const usersAll = await User.find()
@@ -74,7 +73,7 @@ userRouter.post("/login", async (req, res, next) => {
 
   // if hashes dont match => reject! 
   if (!matches) {
-    return res.status(400).json({ error: "PW incorrect" })
+    return res.status(400).json({ error: "Password incorrect!" })
   }
 
   // create JWT Token and send it together with the user

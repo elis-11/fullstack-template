@@ -1,6 +1,5 @@
 @API_URL = http://localhost:5000
-@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQ1NTIxMzcxN2NiZTZiYTIwNDEwOTkiLCJlbWFpbCI6ImVsQGVsLm5ldCIsImlhdCI6MTY1ODE1MDkzNCwiZXhwIjoxNjU4MTY1MzM0fQ.HDGb5MPvLmwkisBrG4euJ2cr7b-MuCG2nWmgrGCzYOo
-
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmU0NTI5YjgwMTk5NDA4NTMzYzQyYWIiLCJuYW1lIjoidGluYSIsImVtYWlsIjoidGluYUBnbWFpbC5jb20iLCJpYXQiOjE2NTkxMzA1NTEsImV4cCI6MTY1OTE0ODU1MX0.8DVrH63JVirCS_gFYp9tuq6P0pOYU8I4zK8fO62LcqQ
 GET {{API_URL}}/
 
 ### Users all
@@ -16,9 +15,9 @@ POST {{API_URL}}/user
 Content-Type: application/json
 
 {
-  "name": "kati",
-  "email": "kati@gmail.com",
-  "password": "kati" 
+  "name": "tina",
+  "email": "tina@gmail.com",
+  "password": "tina" 
 }
 
 ### Login
@@ -26,8 +25,8 @@ POST {{API_URL}}/user/login
 Content-Type: application/json
 
 {
-  "email": "jenny@gmail.com",
-  "password": "jenny" 
+  "email": "tina@gmail.com",
+  "password": "tina" 
 }
 
 ### if create todo

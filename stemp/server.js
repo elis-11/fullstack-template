@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
   <h2>Hello from API!</h2>
 <div>Our routes:</div>
 <div>Home: <a href="/">/</a></div>
-<div>Courses: <a href="/users">/users</a></div>
+<div>Courses: <a href="/user">/user</a></div>
 <div> Frontend URL: <a href="${process.env.ORIGIN_URL}"> ${process.env.ORIGIN_URL}</a></div>
   `)
 })
