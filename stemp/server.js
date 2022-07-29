@@ -13,7 +13,14 @@ app.use(cors()) // this is enough setup for token exchange
 app.use(express.json()) // JSON Parser => req.body
 
 app.get("/", (req, res) => {
-  res.send("Hello from API!")
+  // res.send("Hello from API!")
+  res.send(`
+  <h2>Hello from API!</h2>
+<div>Our routes:</div>
+<div>Home: <a href="/">/</a></div>
+<div>Courses: <a href="/users">/users</a></div>
+<div> Frontend URL: <a href="${process.env.ORIGIN_URL}"> ${process.env.ORIGIN_URL}</a></div>
+  `)
 })
 
 // load ROUTERS
@@ -44,7 +51,7 @@ app.use(errorHandler404)
 //   })
 // })
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5555
 app.listen(PORT, () => {
   console.log(`API listening on http://localhost:${PORT}`)
 })

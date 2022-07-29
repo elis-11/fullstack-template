@@ -15,6 +15,7 @@ export const Navbar = () => {
   return (
     <div>
       <nav>
+        <NavLink to="/">Home</NavLink>
         {!user && <NavLink to="/login">Login</NavLink>}
         {user && (
           <NavLink to="#" onClick={logout}>

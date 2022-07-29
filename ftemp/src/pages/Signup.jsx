@@ -1,11 +1,12 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDataContext } from "../context/DataProvider";
+import { signupApi } from "../helpers/apiCalls";
 
 export const Signup = () => {
-  const { setUser, errors, setErrors } = useDataContext();
+  const { errors, setErrors } = useDataContext();
 
-  const refName=useRef();
+  const refName = useRef();
   const refEmail = useRef();
   const refPassword = useRef();
 
@@ -14,23 +15,28 @@ export const Signup = () => {
   const onSignupSubmit = async (e) => {
     e.preventDefault();
 
-    // const result = await signupApi(
-    //   nameRef.current.value,
-    //   emailRef.current.value,
-    //   passwordRef.current.value
-    // );
-    // if (result.error) {
-    //   return setErrors(result.error);
-    // }
-    // console.log(result);
-    // setErrors("")
-    // setUser(result)
+    const name = refName.current.value;
+    const email = refEmail.current.value;
+    const password = refPassword.current.value;
 
-    // navigate('/dashboard');
+    if (!name || !email || !password) {
+      return setErrors("Something went wrong! Try again!");
+    }
+
+    const result = await signupApi(name, email, password);
+    console.log(result);
+
+    if (result.error) {
+      return setErrors(result.error);
+    }
+    setErrors("");
+    navigate("/");
+
+    // console.log("Login at API"); 
   };
 
   return (
-    <div className="login">
+    <div className="signup">
       <h2>Signup</h2>
       <form onSubmit={onSignupSubmit}>
         <div>

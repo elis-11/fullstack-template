@@ -1,4 +1,3 @@
-import React from "react";
 import { useDataContext } from "../context/DataProvider";
 
 export const Home = () => {
