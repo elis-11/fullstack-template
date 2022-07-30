@@ -5,7 +5,6 @@ export const ProtectedRoute = ({ children, admin }) => {
   console.log(children);
 
   const { user } = useDataContext();
-  const navigate = useNavigate();
 
   if (!user) {
     console.log('Not logged in!');
@@ -14,8 +13,7 @@ export const ProtectedRoute = ({ children, admin }) => {
   if (admin && user.role !== 'admin') {
     return <Navigate to="/login" />;
   }
-  
-
+//  
   return children;
   // return <div>Protected</div>
 };

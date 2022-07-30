@@ -4,6 +4,7 @@ import User from "../models/User.js"
 import jwt from "jsonwebtoken"
 import { auth } from '../lib/auth.middleware.js'
 import config from '../config.js'
+import { isAdmmin } from '../lib/admin.middleware .js'
 
 const userRouter = Router()
 
@@ -17,6 +18,11 @@ userRouter.get("/", auth, async (req, res, next) => {
   res.json(usersAll)
 })
 
+// filter All Admins
+userRouter.get("/admin", auth, isAdmmin , async (req, res, next)=>{
+const admins= await User.find({role: "admin"})
+res.json(admins)
+})
 
 // GET SINGLE USER
 // Route /user/:id
