@@ -1,0 +1,54 @@
+.Home {
+  display: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.Signup,
+.Login {
+  display: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  form {
+    padding: 4rem;
+    div {
+      input {
+        // display: flex;
+        width: auto;
+        height: 2rem;
+        padding-left: 1rem;
+        margin: 0.4rem;
+      }
+      button{
+        width: auto;
+      }
+  
+    }
+  }
+}
+
+.Dashboard {
+  display: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  // border: 1px solid #ccc;
+  width: 100%;
+  .container {
+    width: 70%;
+    margin: auto;
+    margin-top: 5rem;
+
+    .users {
+      margin: auto;
+      display: flex;
+      justify-content: space-evenly;
+      // width: 50%;
+      height: 2rem;
+      place-items: center;
+      border: 1px solid #ccc;
+    }
+  }
+}
