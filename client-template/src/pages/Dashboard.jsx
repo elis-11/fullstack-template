@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDataContext } from "../context/DataProvider";
 import { getUsersApi } from "../helpers/apiCalls";
+import '../styles/Auth.scss';
 
 export const Dashboard = () => {
   const { user, users, setUsers, errors, setErrors } = useDataContext();
@@ -23,14 +24,16 @@ export const Dashboard = () => {
   }, [user]);
 
   return (
-    <div className="users">
+    <div className="Dashboard">
       <h2>Dashboard</h2>
+      <div className="container">
       {users.map((user) => (
-        <div key={user._id}>
+        <div className="users" key={user._id}>
           <div>{user.name}</div>
           <div>{user.email}</div>
         </div>
       ))}
+      </div>
       <div className="errors">{errors}</div>
     </div>
   );

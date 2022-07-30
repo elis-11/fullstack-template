@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDataContext } from "../context/DataProvider";
 import { signupApi } from "../helpers/apiCalls";
+import '../styles/Auth.scss';
+
 
 export const Signup = () => {
   const { errors, setErrors } = useDataContext();
@@ -36,7 +38,7 @@ export const Signup = () => {
   };
 
   return (
-    <div className="signup">
+    <div className="Signup">
       <h2>Signup</h2>
       <form onSubmit={onSignupSubmit}>
         <div>
