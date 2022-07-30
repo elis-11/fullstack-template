@@ -11,21 +11,27 @@
   align-items: center;
   text-align: center;
 
+
   form {
     padding: 4rem;
     div {
       input {
         // display: flex;
-        width: auto;
+        // width: auto;
+        width: 18rem;
         height: 2rem;
         padding-left: 1rem;
         margin: 0.4rem;
+        // background-color: transparent;
       }
-      button{
-        width: auto;
-      }
-  
     }
+      button{
+        font-size: 1rem;
+        width: 18rem;
+        height: 2rem;
+        // background-color: transparent;
+      }
+      
   }
 }
 
