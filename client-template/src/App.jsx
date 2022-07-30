@@ -6,6 +6,8 @@ import { Signup } from "./pages/Signup";
 import { Dashboard } from "./pages/Dashboard";
 import { Navbar } from "./components/Navbar";
 import "./styles/App.scss";
+import { Admin } from "./pages/Admin";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
   const { user, setUser } = useDataContext();
@@ -21,7 +23,23 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin"
+            element={ 
+              <ProtectedRoute admin>
+                <Admin /> 
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<div>Page does not exist</div>} />
         </Routes>
       </main>
       <footer>&copy; Tralalas Studios Inc.</footer>

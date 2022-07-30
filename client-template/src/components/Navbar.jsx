@@ -26,6 +26,7 @@ export const Navbar = () => {
         )}
         {!user && <NavLink to="/signup">Signup</NavLink>}
         {user && <NavLink to="/dashboard">Dashboard</NavLink>}
+        {user?.role === 'admin' && <NavLink to="/admin">Admin</NavLink>}
       </nav>
     </div>
   );
