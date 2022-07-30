@@ -1,13 +1,13 @@
 import { useDataContext } from "../context/DataProvider";
-import '../styles/Auth.scss';
+import "../styles/Auth.scss";
 
 export const Home = () => {
-  const { user } = useDataContext;
+  const { user } = useDataContext();
 
   return (
     <div className="Home">
       <h2>Home</h2>
-      {user?.email}
+      {user?.name} {user?.email}
     </div>
   );
 };

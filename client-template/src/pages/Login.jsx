@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDataContext } from "../context/DataProvider";
 import { loginApi } from "../helpers/apiCalls";
+import { storeUserInLocalStorage } from "../helpers/LocallStorage";
 import '../styles/Auth.scss';
 
 export const Login = () => {
@@ -31,6 +32,7 @@ export const Login = () => {
       return setErrors(result.error);
     }
     setErrors("");
+    storeUserInLocalStorage(result)
     setUser(result);
     navigate("/dashboard");
   };

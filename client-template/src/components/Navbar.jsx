@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDataContext } from "../context/DataProvider";
+import { deleteUserInLocalStorage } from "../helpers/LocallStorage";
 
 export const Navbar = () => {
   const { user, setUser } = useDataContext();
@@ -8,6 +9,7 @@ export const Navbar = () => {
 
   const logout = (e) => {
     e.preventDefault();
+    deleteUserInLocalStorage()
     setUser();
     navigate("/login");
   };
