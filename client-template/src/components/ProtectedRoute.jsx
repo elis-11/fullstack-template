@@ -7,13 +7,13 @@ export const ProtectedRoute = ({ children, admin }) => {
   const { user } = useDataContext();
 
   if (!user) {
-    console.log('Not logged in!');
-      return <Navigate to="/login" />;
+    console.log("Not logged in!");
+    return <Navigate to={"/login"} />;
   }
-  if (admin && user.role !== 'admin') {
-    return <Navigate to="/login" />;
+  if (admin && user.role !== "admin") {
+    return <Navigate to={"/login"} />;
   }
-//  
+  //
   return children;
   // return <div>Protected</div>
 };

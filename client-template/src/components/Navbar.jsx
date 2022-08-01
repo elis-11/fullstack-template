@@ -9,7 +9,7 @@ export const Navbar = () => {
 
   const logout = (e) => {
     e.preventDefault();
-    deleteUserInLocalStorage()
+    deleteUserInLocalStorage();
     setUser();
     navigate("/login");
   };
@@ -19,14 +19,14 @@ export const Navbar = () => {
       <nav>
         <NavLink to="/">Home</NavLink>
         {!user && <NavLink to="/login">Login</NavLink>}
+        {!user && <NavLink to="/signup">Signup</NavLink>}
+        {user && <NavLink to="/dashboard">Dashboard</NavLink>}
+        {user?.role === "admin" && <NavLink to="/admin">Admin</NavLink>}
         {user && (
           <NavLink to="#" onClick={logout}>
             Logout
           </NavLink>
         )}
-        {!user && <NavLink to="/signup">Signup</NavLink>}
-        {user && <NavLink to="/dashboard">Dashboard</NavLink>}
-        {user?.role === 'admin' && <NavLink to="/admin">Admin</NavLink>}
       </nav>
     </div>
   );
