@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { UsersList } from "../components/UsersList";
 import { useDataContext } from "../context/DataProvider";
 import { getUsersApi } from "../helpers/apiCalls";
 import "../styles/Auth.scss";
 
 export const Dashboard = () => {
-  const navigate = useNavigate ();
+  const navigate = useNavigate();
 
   const { user, users, setUsers, errors, setErrors } = useDataContext();
 
@@ -31,14 +32,7 @@ export const Dashboard = () => {
   return (
     <div className="Dashboard">
       <h2>Dashboard</h2>
-      <div className="container">
-        {users.map((user) => (
-          <div className="users" key={user._id}>
-            <div>{user.name}</div>
-            <div>{user.email}</div>
-          </div>
-        ))}
-      </div>
+        <UsersList />
       <div className="errors">{errors}</div>
     </div>
   );

@@ -1,5 +1,9 @@
 @API_URL = http://localhost:5000
-@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmU1NjVlMzkxOWM0ZjlmNDcyOGI1N2IiLCJuYW1lIjoiUm9iZXJ0IiwiZW1haWwiOiJyb2JlcnRAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjU5MjA1NzU5LCJleHAiOjE2NTkyMjM3NTl9.LY5Maapbo4qFjekvis1p1kSpDSnW5u290LFfwWndXbQ 
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmU5MjAxZDdmYTYxMTg3MTExZWVmMTciLCJuYW1lIjoiQW1pciIsImVtYWlsIjoiYW1pckBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImNyZWF0ZWRBdCI6IjIwMjItMDgtMDJUMTM6MDE6MTcuMzU0WiIsInVwZGF0ZWRBdCI6IjIwMjItMDgtMDJUMTM6MDE6MTcuMzU0WiIsImlhdCI6MTY1OTQ0NTI4MSwiZXhwIjoxNjU5ODc3MjgxfQ.ulre0zdk-pWszD-xAn-j9j7iRZe9HmDGX0vhflmgGl8
+
+### Home
+GET {{API_URL}}/
+Authorization: {{TOKEN}}
 
 ### Users all
 GET {{API_URL}}/user
@@ -10,7 +14,7 @@ GET {{API_URL}}/user/admin
 Authorization: {{TOKEN}}
 
 ### User single
-GET {{API_URL}}/user
+GET {{API_URL}}/user/62e565e3919c4f9f4728b57b
 Authorization: {{TOKEN}}
 
 ### Signup
@@ -18,9 +22,9 @@ POST {{API_URL}}/user
 Content-Type: application/json
 
 {
-  "name": "Albert",
-  "email": "albert@gmail.com",
-  "password": "albert" 
+  "name": "Amir",
+  "email": "amir@gmail.com",
+  "password": "amir"
 }
 
 ### Login
@@ -28,15 +32,29 @@ POST {{API_URL}}/user/login
 Content-Type: application/json
 
 {
-  "email": "robert@gmail.com",
-  "password": "robert" 
+ "email": "amir@gmail.com",
+ "password": "amir"
 }
 
-### if create todo
-POST {{API_URL}}/todo
-Content-Type: application/json
+@USER_ID = 62e91c588a51ab586f3d6480
+
+### UPDATE user
+PATCH {{API_URL}}/user/{{USER_ID}}
 Authorization: {{TOKEN}}
+Content-Type: application/json
 
 {
-  "titles": "Code some frontend for JWT"
+  "name": "Saby",
+  "email": "saby@gmail.com",
+  "password": "saby" 
 }
+
+
+### if create todo
+###POST {{API_URL}}/todo
+###Content-Type: application/json
+###Authorization: {{TOKEN}}
+
+###{
+###  "titles": "Code some frontend for JWT"
+###}
