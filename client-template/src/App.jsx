@@ -6,8 +6,9 @@ import { Signup } from "./pages/Signup";
 import { Dashboard } from "./pages/Dashboard";
 import { Navbar } from "./components/Navbar";
 import "./styles/App.scss";
-import { Admin } from "./pages/Admin";
+import { Admin } from "./components/admin/Admin";
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import { NotFound } from "./pages/NotFound";
 
 function App() {
   const { user, setUser } = useDataContext();
@@ -16,7 +17,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar />
-        <h2>My Weebpage Template</h2>
       </header>
       <main>
         <Routes>
@@ -32,14 +32,14 @@ function App() {
             }
           />
           <Route
-            path="/admin"
-            element={ 
+            path="/admin/*"
+            element={
               <ProtectedRoute admin>
-                <Admin /> 
+                <Admin />
               </ProtectedRoute>
             }
           />
-          <Route path="*" element={<div>Page does not exist</div>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <footer>&copy; Tralalas Studios Inc.</footer>

@@ -6,7 +6,8 @@ export const Home = () => {
 
   return (
     <div className="Home">
-      <h2>Home</h2>
+      <h2>My Weebpage Template</h2>
+      <h3>Home</h3>
       {user?.name} {user?.email}
     </div>
   );
