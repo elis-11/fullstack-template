@@ -55,6 +55,12 @@ userRouter.post("/", async (req, res, next) => {
   res.json(user);
 });
 
+// CREATE
+// usersRouter.post("/", async (req, res)=>{
+//   const userNew= await UserModel.create(req.body)
+//   res.json(userNew);
+// })
+
 // LOGIN user
 // Route: POST /user/login
 userRouter.post("/login", async (req, res, next) => {
@@ -110,5 +116,14 @@ userRouter.patch("/:id", auth, async (req, res, next) => {
 //   res.json(userUpdated);
 // });
 
+// DELETE USER
+userRouter.delete("/:id", auth, async (req, res, next) => {
+  try {
+    const userDelete = await User.findByIdAndDelete(req.params.id);
+    res.json(userDelete);
+  } catch (error) {
+    next(next);
+  }
+});
 
 export default userRouter;

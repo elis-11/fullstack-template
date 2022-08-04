@@ -45,6 +45,17 @@ export const updateUserApi = async (token, userId, updateData) => {
   return response.json();
 };
 
+export const deleteUserApi = async (token, userId) => {
+  const response = await fetch(`${API_URL}/user/${userId}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: token,
+    }, // for JWT
+  });
+  return response.json();
+};
+
+
 // export const updateUserApiCookies = async (userId, updateData) => {
 //   const response = await fetch(`${API_URL}/user/${userId}`, {
 //     method: "PATCH",

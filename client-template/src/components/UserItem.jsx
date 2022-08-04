@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AiTwotoneEdit, AiFillDelete } from "react-icons/ai";
 import { MdSaveAlt } from "react-icons/md";
 import { useDataContext } from "../context/DataProvider";
-import { updateUserApi } from "../helpers/apiCalls";
+import { deleteUserApi, updateUserApi } from "../helpers/apiCalls";
 
 export const UserItem = ({ user }) => {
   const { user: userLoggedIn, users, setUsers } = useDataContext(); // import from context & renamed user to other variable -> userLoggedIn
@@ -28,15 +28,25 @@ export const UserItem = ({ user }) => {
     console.log(userUpdatedApi);
     setEditMode(false);
 
-    // if API saving / updating woeked => update user also in Context
-    // find user that we updated in our context by _id
-    // if found => REPLASE by the user from API
-    // all other users => dont touch!
+    // Save in Browser
     const usersCopy = users.map((_user) => {
       return _user._id === userUpdatedApi._id ? userUpdatedApi : _user;
     });
-
+    
     setUsers(usersCopy);
+    
+  };
+  
+  const handleDelete = async () => {
+    const response = await deleteUserApi(userLoggedIn.token, userCopy._id);
+    // const response = await deleteUserApi(userLoggedIn.token, user._id);
+    console.log(response);
+
+    const usersCopy = users.filter((_user) => {
+      return _user._id !== userCopy._id
+    });
+    setUsers(usersCopy);
+
   };
 
   return (
@@ -68,7 +78,7 @@ export const UserItem = ({ user }) => {
           className="icon"
           onClick={() => setEditMode(!editMode)}
         />
-        <AiFillDelete className="icon" />
+        <AiFillDelete className="icon" onClick={() => handleDelete()}/>
       </div>
     </div>
   );

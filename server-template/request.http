@@ -36,7 +36,7 @@ Content-Type: application/json
  "password": "amir"
 }
 
-@USER_ID = 62e91c588a51ab586f3d6480
+@USER_ID = 62e91c968a51ab586f3d6484
 
 ### UPDATE user
 PATCH {{API_URL}}/user/{{USER_ID}}
@@ -49,6 +49,9 @@ Content-Type: application/json
   "password": "saby" 
 }
 
+### DELETE USER
+DELETE {{API_URL}}/user/{{USER_ID}}
+Authorization: {{TOKEN}}
 
 ### if create todo
 ###POST {{API_URL}}/todo
