@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { AiTwotoneEdit, AiFillDelete } from "react-icons/ai";
+import { AiTwotoneEdit, AiFillDelete, AiOutlineSave } from "react-icons/ai";
+import { MdSaveAlt } from "react-icons/md";
 import { useDataContext } from "../context/DataProvider";
 import { updateUserApi } from "../helpers/apiCalls";
 
@@ -40,29 +41,25 @@ export const UserItem = ({ user }) => {
 
   return (
     <div className="user" key={user._id}>
-        {editMode ? (
-          <div className="edit">
-            <input name="name" value={userCopy.name} onChange={handleChange} />
-            <input
-              name="email"
-              value={userCopy.email}
-              onChange={handleChange}
-            />
-            <button onClick={submitUpdate}>Save</button>
-          </div>
-        ) : (
-          <div className="item">
-            <div className="name">{userCopy.name}</div>
-            <div className="email">{userCopy.email}</div>
-          </div>
-        )}
-        <div className="icons">
-          <AiTwotoneEdit
-            className="icon"
-            onClick={() => setEditMode(!editMode)}
-          />
-          <AiFillDelete className="icon" />
+      {editMode ? (
+        <div className="edit">
+          <input className="name"name="name" value={userCopy.name} onChange={handleChange} />
+          <input className="email"name="email" value={userCopy.email} onChange={handleChange} />
+          <MdSaveAlt className="save" onClick={submitUpdate} />
         </div>
+      ) : (
+        <div className="item">
+          <div className="name">{userCopy.name}</div>
+          <div className="email">{userCopy.email}</div>
+        </div>
+      )}
+      <div className="icons">
+        <AiTwotoneEdit
+          className="icon"
+          onClick={() => setEditMode(!editMode)}
+        />
+        <AiFillDelete className="icon" />
       </div>
+    </div>
   );
 };

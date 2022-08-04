@@ -44,3 +44,16 @@ export const updateUserApi = async (token, userId, updateData) => {
   });
   return response.json();
 };
+
+// export const updateUserApiCookies = async (userId, updateData) => {
+//   const response = await fetch(`${API_URL}/user/${userId}`, {
+//     method: "PATCH",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     credentials: "include",
+//     body: JSON.stringify(updateData),
+//   })
+//   // parse updated user from API
+//   return response.json()
+// }
