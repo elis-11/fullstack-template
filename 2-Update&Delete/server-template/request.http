@@ -1,0 +1,63 @@
+@API_URL = http://localhost:5000
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmU5MjAxZDdmYTYxMTg3MTExZWVmMTciLCJuYW1lIjoiQW1pciIsImVtYWlsIjoiYW1pckBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImNyZWF0ZWRBdCI6IjIwMjItMDgtMDJUMTM6MDE6MTcuMzU0WiIsInVwZGF0ZWRBdCI6IjIwMjItMDgtMDJUMTM6MDE6MTcuMzU0WiIsImlhdCI6MTY1OTQ0NTI4MSwiZXhwIjoxNjU5ODc3MjgxfQ.ulre0zdk-pWszD-xAn-j9j7iRZe9HmDGX0vhflmgGl8
+
+### Home
+GET {{API_URL}}/
+Authorization: {{TOKEN}}
+
+### Users all
+GET {{API_URL}}/user
+Authorization: {{TOKEN}}
+
+### Admin Route
+GET {{API_URL}}/user/admin
+Authorization: {{TOKEN}}
+
+### User single
+GET {{API_URL}}/user/62e565e3919c4f9f4728b57b
+Authorization: {{TOKEN}}
+
+### Signup
+POST {{API_URL}}/user
+Content-Type: application/json
+
+{
+  "name": "Amir",
+  "email": "amir@gmail.com",
+  "password": "amir"
+}
+
+### Login
+POST {{API_URL}}/user/login
+Content-Type: application/json
+
+{
+ "email": "amir@gmail.com",
+ "password": "amir"
+}
+
+@USER_ID = 62e91c968a51ab586f3d6484
+
+### UPDATE user
+PATCH {{API_URL}}/user/{{USER_ID}}
+Authorization: {{TOKEN}}
+Content-Type: application/json
+
+{
+  "name": "Saby",
+  "email": "saby@gmail.com",
+  "password": "saby" 
+}
+
+### DELETE USER
+DELETE {{API_URL}}/user/{{USER_ID}}
+Authorization: {{TOKEN}}
+
+### if create todo
+###POST {{API_URL}}/todo
+###Content-Type: application/json
+###Authorization: {{TOKEN}}
+
+###{
+###  "titles": "Code some frontend for JWT"
+###}
