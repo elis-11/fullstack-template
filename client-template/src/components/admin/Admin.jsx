@@ -9,10 +9,14 @@ export const Admin = () => {
   return (
     <div className="Admin">
       <div className="links">
+        <div>
         <NavLink to="" end>
           Members
         </NavLink>
+        </div>
+        <div>
         <NavLink to="projects">Projects</NavLink>
+        </div>
       </div>
       <Routes>
         <Route path="/" element={<Members />} />
