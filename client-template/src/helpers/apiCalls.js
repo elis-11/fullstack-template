@@ -11,11 +11,15 @@ export const getUsersApi = async (token) => {
 };
 
 // SIGNUP
-export const signupApi = async (name, email, password) => {
+// export const signupApi = async (name, email, password) => {  // without AVATAR
+export const signupApi = async (name, email, password, avatar) => {
+  // without AVATAR
+  // export const signupApi = async (userData) => {  // with AVATAR
   const response = await fetch(`${API_URL}/user`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, email, password }),
+    body: JSON.stringify({ name, email, password, avatar }), // without AVATAR
+    // body: JSON.stringify({ userData }),   // with AVATAR
   });
   return response.json();
 };
@@ -36,10 +40,11 @@ export const loginApi = async (email, password) => {
 export const updateUserApi = async (token, userId, updateData) => {
   const response = await fetch(`${API_URL}/user/${userId}`, {
     method: "PATCH",
-    headers: { 
+    headers: {
       "Content-Type": "application/json",
-       Authorization: token },  // for JWT
-      //  credentials: include  <-wenn ohne JWT
+      Authorization: token,
+    }, // for JWT
+    //  credentials: include  <-wenn ohne JWT
     body: JSON.stringify(updateData),
   });
   return response.json();
@@ -54,7 +59,6 @@ export const deleteUserApi = async (token, userId) => {
   });
   return response.json();
 };
-
 
 // export const updateUserApiCookies = async (userId, updateData) => {
 //   const response = await fetch(`${API_URL}/user/${userId}`, {

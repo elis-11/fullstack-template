@@ -45,7 +45,6 @@ export const Login = () => {
           <input
             type="text"
             ref={refEmail}
-            defaultValue={"elis@gmail.com"}
             placeholder="Email"
           />
         </div>
@@ -53,7 +52,6 @@ export const Login = () => {
           <input
             type="password"
             ref={refPassword}
-            defaultValue="elis"
             placeholder="Password"
           />
         </div>

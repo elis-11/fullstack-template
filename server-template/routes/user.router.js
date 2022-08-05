@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 import { auth } from "../lib/auth.middleware.js";
 import config from "../config.js";
 import { isAdmmin } from "../lib/admin.middleware .js";
+import { v2 as cloudinary } from "cloudinary"; // v2 renamed to cloudinary  = as
 
 const userRouter = Router();
 
@@ -41,6 +42,9 @@ userRouter.post("/", async (req, res, next) => {
 
   const userExists = await User.findOne({ email });
 
+  //! AVATAR - we receive image as string from frontend
+  const avatarImageString = userData.avatar;
+
   // if user already exists with that email => REJECT
   if (userExists) {
     return res.status(400).json({
@@ -53,6 +57,17 @@ userRouter.post("/", async (req, res, next) => {
 
   const user = await User.create(userData);
   res.json(user);
+
+  //! AVATAR - upload image to cloudinary
+  const resCloudinary = await cloudinary.uploader.upload(avatarImageString);
+  console.log(resCloudinary);
+
+  const avatarUrlCloudinary = resCloudinary.secure_url
+  const userUpdated = await User.findByIdAndUpdate(
+    user._id,
+    { avatar: avatarUrlCloudinary },
+    { new: true })
+  console.log(userUpdated);
 });
 
 // CREATE

@@ -71,6 +71,7 @@ export const UserItem = ({ user }) => {
         <div className="item">
           <div className="name">{userCopy.name}</div>
           <div className="email">{userCopy.email}</div>
+          {/* <div className="avatar">{userCopy.avatar}</div> */}
         </div>
       )}
       <div className="icons">

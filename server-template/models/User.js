@@ -1,12 +1,17 @@
-import mongoose from "mongoose"
-const { Schema, model } = mongoose
+import mongoose from "mongoose";
+const { Schema, model } = mongoose;
 
 const UserSchema = new Schema(
   {
     name: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    role: {type: String, default: "user", enum: ["user", "admin"]}
+    avatar: {
+      type: String,
+      default:
+        "https://res.cloudinary.com/dngl4djva/image/upload/v1659703451/default_mwdlea.png",
+    },
+    role: { type: String, default: "user", enum: ["user", "admin"] },
   },
   {
     versionKey: false,
@@ -17,13 +22,13 @@ const UserSchema = new Schema(
     // can be used to hide confidential information to frontend like passwords
     toJSON: {
       transform: (doc, documentToReturn) => {
-        delete documentToReturn.password
-        return documentToReturn
+        delete documentToReturn.password;
+        return documentToReturn;
       },
     },
   }
-)
+);
 
-const User = model("User", UserSchema)
+const User = model("User", UserSchema);
 
-export default User
+export default User;

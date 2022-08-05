@@ -16,6 +16,15 @@
 
   form {
     padding: 1rem;
+    label {
+      img{
+        width: 100px;
+        cursor: pointer;
+        &:hover {
+          color: rgb(251, 248, 248);
+        }
+      }
+    }
     div {
       input {
         width: 18rem;
