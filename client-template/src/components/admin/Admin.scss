@@ -1,38 +1,38 @@
 .Admin {
   display: flex;
-justify-content: space-evenly;
-.links {
-display: column;
-border-right: 3px solid white;
-div{
-  padding-bottom: 2rem;
-  a{
-    text-decoration: none;
-    font-size: 2rem;
-    padding:2rem;
-    color: white;
-    &:hover {
-      color: rgb(137, 135, 135);
+  justify-content: space-evenly;
+  .links {
+    display: column;
+    border-right: 3px solid white;
+    div {
+      padding-top: 2rem;
+      a {
+        text-decoration: none;
+        font-size: 1.8rem;
+        padding: 2rem;
+        color: white;
+        &:hover {
+          color: rgb(137, 135, 135);
+        }
+      }
     }
   }
-}
-}
-.Projects {
-  display: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  .content {
-    width: 40%;
-    margin: auto;
-    margin-top: 3rem;
+  .Projects {
     display: column;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    .content {
+      width: 50%;
+      margin: auto;
+      margin-top: 3rem;
+      display: column;
+      // border: 1px solid #ccc;
+      box-shadow: 0 4px 8px 0 rgba(248, 248, 248, 0.981),
+        0 6px 20px 0 rgba(253, 252, 252, 0.983);
+    }
   }
-}
 
   .Members {
     display: column;
@@ -42,7 +42,7 @@ div{
     // background-image: linear-gradient(to right, rgb(242, 226, 226) , rgb(234, 234, 212));
     width: 100%;
     .users {
-      width: 40%;
+      width: 90%;
       margin: auto;
       margin-top: 3rem;
       display: column;

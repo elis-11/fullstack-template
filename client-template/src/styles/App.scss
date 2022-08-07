@@ -116,6 +116,12 @@ code {
       background-color: #fff;
       text-decoration: none;
       padding: 0.7rem 1.3rem;
+      text-shadow: 1px 1px 2px black, 0 0 15px white, 0 0 15px white;
+      &:hover {
+      box-shadow: 1px 1px 2px white, 0 0 15px white, 0 0 15px white;
+      text-shadow: 1px 1px 2px black, 0 0 15px white, 0 0 15px white;
+
+      }
     }
   }
 }
