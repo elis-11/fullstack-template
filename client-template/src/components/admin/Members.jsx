@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { UsersList } from "../UsersList";
 import { useDataContext } from "../../context/DataProvider";
 import { getUsersApi } from "../../helpers/apiCalls";
+// import { useDataContext } from "../../context/DataProvider";
+// import { getUsersApi } from "../../helpers/apiCalls";
 import "./Admin.scss";
+import { MemList } from "./MemList";
+// import { MemList } from "./MemList";
 
 export const Members = () => {
   const navigate = useNavigate();
@@ -32,7 +35,7 @@ export const Members = () => {
   return (
     <div className="Members">
       <h2>Members</h2>
-      <UsersList />
+      <MemList />
       <div className="errors">{errors}</div>
     </div>
   );

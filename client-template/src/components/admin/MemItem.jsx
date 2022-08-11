@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { AiTwotoneEdit, AiFillDelete } from "react-icons/ai";
 import { MdSaveAlt } from "react-icons/md";
-import { useDataContext } from "../context/DataProvider";
-import { deleteUserApi, updateUserApi } from "../helpers/apiCalls";
+import { useDataContext } from "../../context/DataProvider";
+// import { useDataContext } from "../context/DataProvider";
+import { deleteUserApi, updateUserApi } from "../../helpers/apiCalls";
 
-export const UserItem = ({ user }) => {
+export const MemItem = ({ user }) => {
   const { user: userLoggedIn, users, setUsers } = useDataContext(); // import from context & renamed user to other variable -> userLoggedIn
   const [editMode, setEditMode] = useState(false);
   const [userCopy, setUserCopy] = useState(user);
@@ -51,7 +52,7 @@ export const UserItem = ({ user }) => {
 
   return (
     <div className="user" key={user._id}>
-      {/* {editMode ? (
+      {editMode ? (
         <div className="edit">
           <input
             className="name"
@@ -67,20 +68,20 @@ export const UserItem = ({ user }) => {
           />
           <MdSaveAlt className="save" onClick={submitUpdate} />
         </div>
-      ) : ( */}
+      ) : (
         <div className="item">
           <div className="name">{userCopy.name}</div>
           <div className="email">{userCopy.email}</div>
           {/* <div className="avatar">{userCopy.avatar}</div> */}
         </div>
-      {/* )} */}
-      {/* <div className="icons"> */}
-        {/* <AiTwotoneEdit
+      )}
+      <div className="icons">
+        <AiTwotoneEdit
           className="icon"
           onClick={() => setEditMode(!editMode)}
         />
-        <AiFillDelete className="icon" onClick={() => handleDelete()}/> */}
-      {/* </div> */}
+        <AiFillDelete className="icon" onClick={() => handleDelete()}/>
+      </div>
     </div>
   );
 };
