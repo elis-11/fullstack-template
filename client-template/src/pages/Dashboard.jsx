@@ -32,7 +32,7 @@ export const Dashboard = () => {
   return (
     <div className="Dashboard">
       <h2>Dashboard</h2>
-        <UsersList />
+      <UsersList />
       <div className="errors">{errors}</div>
     </div>
   );

@@ -1,8 +1,5 @@
-// import { useDataContext } from "../context/DataProvider";
-// import { useDataContext } from "../../context/DataProvider";
 import { useDataContext } from "../../context/DataProvider";
 import { MemItem } from "./MemItem";
-// import { MemItem } from "./MemItem";
 
 export const MemList = () => {
   const { users } = useDataContext();
