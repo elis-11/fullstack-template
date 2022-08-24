@@ -1,0 +1,48 @@
+.Posts {
+  width: 100%;
+  display: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 3rem;
+  .content {
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .post {
+      width: 26%;
+      border: 1px solid white;
+      padding: 2%;
+      margin: 3.2%;
+      box-shadow: 0 4px 8px 0 white, 0 6px 20px 0 white;
+      img {
+        width: 8rem;
+        margin-bottom: 2rem;
+      }
+      .data {
+        display: flex;
+        place-items: center;
+        justify-content: space-evenly;
+        .user-avatar{
+          width: 2rem;
+          border-radius: 50%;
+          border: 1px solid #ccc;
+          padding-left: 0;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: rgb(183, 180, 180);
+        text-shadow: 1px 1px 2px #000000;
+        &:hover {
+          color: #fff;
+          text-shadow: 2px 1px 2px #fff;
+        }
+      }
+
+    }
+  }
+}
