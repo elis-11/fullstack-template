@@ -1,0 +1,185 @@
+.Posts {
+  width: 100%;
+  display: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+  .header {
+    a {
+      border-radius: 5px;
+      font-size: 0.7rem;
+      color: rgb(29, 27, 27);
+      background-color: #fff;
+      text-decoration: none;
+      padding: 0.7rem 1.3rem;
+      text-shadow: 1px 1px 2px black, 0 0 15px white, 0 0 15px white;
+      &:hover {
+        box-shadow: 1px 1px 2px white, 0 0 15px white, 0 0 15px white;
+        text-shadow: 1px 1px 2px black, 0 0 15px white, 0 0 15px white;
+      }
+    }
+  }
+    .search{
+      input{
+        width: 50%;
+        height: 2.3rem;
+        margin-top: 2rem;
+        padding-left: 1rem;
+        border: 2px solid #ccc;
+        background-color: transparent;
+      }
+    }
+
+  .content {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .post {
+      width: 26%;
+      border: 1px solid rgb(250, 249, 249);
+      padding-top: 2%;
+      margin: 3%;
+      box-shadow: 0 4px 8px 0 rgb(248, 247, 247),
+        0 6px 20px 0 rgb(228, 207, 207);
+      img {
+        width: 10rem;
+        height: 8rem;
+        margin-bottom: 2rem;
+      }
+      a {
+        text-decoration: none;
+        color: rgb(183, 180, 180);
+        text-shadow: 1px 1px 2px #000000;
+        &:hover {
+          color: #fff;
+          text-shadow: 2px 1px 2px #fff;
+        }
+      }
+      .author {
+        display: flex;
+        justify-content: space-evenly;
+        place-items: center;
+        img {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+        }
+      }
+      .icons{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0.7em;
+        color: rgb(129, 126, 126);
+        .like,
+        .dislike,
+        .edit,
+        .delete{
+font-size: 1rem;
+        }
+          &:hover {
+            color: #fff;
+        }
+      }
+    }
+  }
+}
+.avatar {
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.Details {
+  color: rgb(50, 49, 49);
+  margin-top: 3rem;
+  .title {
+    padding: 1em;
+  }
+  .author {
+    padding: 1em;
+  }
+  .add-comment {
+    input {
+      width: 60%;
+      height: 2rem;
+      background-color: transparent;
+      margin: 1rem;
+      padding-left: 1rem;
+    }
+    button {
+      font-size: 14px;
+      height: 1.8rem;
+      background: none;
+    }
+  }
+
+  .comments {
+    padding: 20px;
+    border: 2px solid #ccc;
+    .comment {
+      padding: 3px;
+      border: 1px solid #ccc;
+      display: flex;
+      place-items: center;
+      .avatar {
+        padding: 0.1em;
+      }
+      .name {
+        margin-left: 0.5em;
+        display: flex;
+        width: 7%;
+      }
+      .description {
+        width: 70%;
+        text-align: left;
+      }
+      .stats {
+        width: 10%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .icon {
+        color: grey;
+      }
+      .delete {
+        font-size: 1.1rem;
+        color: rgb(130, 127, 127);
+      }
+    }
+  }
+}
+.Add {
+  color: red;
+}
+.Add {
+  .create {
+    img{
+      width: 25%;
+    }
+    input{
+      width: 25%;
+      height: 2.2rem;
+      margin: 0.5rem;
+      background-color: transparent;
+      padding-left: 1rem;
+    }
+    a, button {
+      margin: 0.5em;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.7rem;
+      color: rgb(29, 27, 27);
+      background-color: #fff;
+      text-decoration: none;
+      padding: 0.7rem 1.3rem;
+      text-shadow: 1px 1px 2px black, 0 0 15px white, 0 0 15px white;
+      &:hover {
+        box-shadow: 1px 1px 2px white, 0 0 15px white, 0 0 15px white;
+        text-shadow: 1px 1px 2px black, 0 0 15px white, 0 0 15px white;
+      }
+    }
+  }
+}

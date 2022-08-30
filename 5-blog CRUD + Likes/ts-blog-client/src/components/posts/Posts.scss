@@ -1,0 +1,110 @@
+.Posts {
+  width: 100%;
+  display: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 3rem;
+  .content {
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .post {
+      width: 26%;
+      border: 1px solid white;
+      padding: 2%;
+      margin: 3.2%;
+      box-shadow: 0 4px 8px 0 white, 0 6px 20px 0 white;
+      img {
+        width: 8rem;
+        margin-bottom: 2rem;
+      }
+      a {
+        text-decoration: none;
+        color: rgb(183, 180, 180);
+        text-shadow: 1px 1px 2px #000000;
+        &:hover {
+          color: #fff;
+          text-shadow: 2px 1px 2px #fff;
+        }
+      }
+      .data{
+        display: flex;
+        justify-content: space-around;
+        place-items: center;
+        .post-avatar{
+          width: 2rem;
+          border-radius: 50%;
+          box-shadow: 0 4px 8px 0 
+        }
+      }
+    }
+  }
+}
+.avatar {
+  width: 3rem;
+  border-radius: 50%;
+}
+.Details {
+  color: grey;
+  margin-top: 3rem;
+  .title {
+    padding: 1em;
+  }
+  .author {
+    padding: 1em;
+  }
+  .add-comment{
+    input{
+      width: 60%;
+      height: 2rem;
+      background-color: transparent;
+      margin: 1rem;
+      padding-left: 1rem;
+    }
+    button{
+      font-size: 14px;
+      height: 1.8rem;
+      background: none;
+    }
+  }
+
+  .comments{
+    .comment{
+      display: flex;
+      justify-content: space-around;
+      padding: 3px;
+      border: 1px solid #ccc;
+      display: flex;
+      place-items: center;
+      // .icon-avatar{
+     .icon-avatar{
+        padding: .5em;
+        width:3rem;
+        border-radius: 50%;
+      }
+      .name {
+        margin-left: .5em;
+        margin-right: 2rem;
+        display: flex;
+        width: 7%;
+      }
+      .description{
+        width: 60%;
+        text-align: left;
+      }
+      .stats{
+        width: 10%;
+      }
+      .delete{
+        width: 4%;
+        font-size: 1.2rem;
+        flex-direction: right;
+      }
+
+    }
+  }
+}
